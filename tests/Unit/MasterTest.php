@@ -16,7 +16,7 @@ class MasterTest extends TestCase
     public function test_list_of_color()
     {
            $response = $this->get('api/probar');
-            $response->assertOk();
+           $response->assertOk();
     }
 
   
