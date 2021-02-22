@@ -5,6 +5,7 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Http\Controllers\Master;
 
 class MasterTest extends TestCase
 {
@@ -13,11 +14,18 @@ class MasterTest extends TestCase
      *
      * @return void
      */
-    public function test_list_of_color()
+    public function test_list_amount_of_color()
     {
-           $response = $this->get('api/probar');
-           $response->assertOk();
+        $master = new Master();
+        $response = $master->ejecutar('rojo','azul','verde');
+        $this->assertEquals("Cantidad de colores incorrecta", $response);
     }
 
+    public function test_list_of_color()
+    {
+        $master = new Master();
+        $response = $master->ejecutar('rojo','azul','verde','morado');
+        $this->assertEquals("2 Cantidad de negras 2 cantidad de blancas", $response);
+    }
   
 }

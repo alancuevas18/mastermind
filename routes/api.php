@@ -18,4 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/probar', "Master@ejecutar");
+Route::get('/probar/{color1}/{color2}/{color3}/{color4}', "Master@ejecutar");
