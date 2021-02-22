@@ -14,12 +14,6 @@ class MasterTest extends TestCase
      *
      * @return void
      */
-    public function test_list_amount_of_color()
-    {
-        $master = new Master();
-        $response = $master->ejecutar('rojo','azul','verde');
-        $this->assertEquals("Cantidad de colores incorrecta", $response);
-    }
 
     public function test_list_of_color()
     {
